@@ -98,13 +98,13 @@ public class AdminService
 
     public String getRole(String role){
         switch (role){
-            case "ADMIN"-> {return Role.ROLE_ADMIN.toString();}
+            case "ADMIN": {return Role.ROLE_ADMIN.toString();}
 
-            case "USER"->{return Role.ROLE_USER.toString();}
+            case "USER":{return Role.ROLE_USER.toString();}
 
-            case "MERCHANT"->{return Role.ROLE_MERCHANT.toString();}
+            case "MERCHANT":{return Role.ROLE_MERCHANT.toString();}
 
-            default -> {return "None";}
+            default : {return "None";}
         }
     }
 
@@ -259,7 +259,7 @@ public class AdminService
         Credentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:\\Users\\Abhishek N\\Downloads\\image.json"));
         Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
         storage.create(blobInfo, Files.readAllBytes(file.toPath()));
-        return String.format("https://firebasestorage.googleapis.com/v0/b/image-3edad.appspot.com/o/%s?alt=media&token=", URLEncoder.encode(fileName, StandardCharsets.UTF_8));
+        return String.format("https://firebasestorage.googleapis.com/v0/b/image-3edad.appspot.com/o/%s?alt=media&token=", URLEncoder.encode(fileName));
     }
 
     public File convertToFile(MultipartFile multipartFile, String fileName) throws IOException

@@ -580,13 +580,14 @@ public class UserService implements UserDetailsService
     }
 
 
+
     //get order status index using order status
     public int getStatusIndex(String status){
         switch (status.toUpperCase()){
-            case "ACTIVE"->{return 6;}
-            case "PAST"->{return 7;}
-            case "CANCELLED"->{return 8;}
-            default -> {return 9;}
+            case "ACTIVE":{return 6;}
+            case "PAST":{return 7;}
+            case "CANCELLED":{return 8;}
+            default :{return 9;}
         }
     }
 
